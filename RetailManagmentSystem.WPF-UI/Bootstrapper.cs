@@ -1,9 +1,11 @@
 ﻿using Caliburn.Micro;
+using RetailManagmentSystem.WPF_UI.Helpers;
 using RetailManagmentSystem.WPF_UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace RetailManagmentSystem.WPF_UI
 {
@@ -14,6 +16,9 @@ namespace RetailManagmentSystem.WPF_UI
         public Bootstrapper()
         {
             Initialize();
+
+            ConventionManager.AddElementConvention<PasswordBox>(PasswordBoxHelper.BoundPasswordProperty,
+                "Password", "PasswordChanged");
         }
 
         protected override void Configure()
