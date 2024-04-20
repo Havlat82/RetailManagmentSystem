@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
+using RetailManagmentSystem.WPF_UI.Helpers;
 using System;
+using System.Threading.Tasks;
 
 namespace RetailManagmentSystem.WPF_UI.ViewModels
 {
@@ -7,6 +9,12 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
     {
         private string _username;
         private string _password;
+        private IAPIHelper _apiHelper;
+
+        public LoginViewModel(IAPIHelper apiHelper)
+        {
+            _apiHelper = apiHelper;
+        }
 
         public string Username
         {
@@ -44,9 +52,17 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
             }
         }
 
-        public void LogIn()
+        public async Task LogIn()
         {
-            Console.WriteLine();
+            try
+            {
+                var result = await _apiHelper.Authenticate(Username, Password);
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+
+            }
         }
     }
 }
