@@ -9,6 +9,7 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
     {
         private string _username;
         private string _password;
+        private string _errorMessage;
         private IAPIHelper _apiHelper;
 
         public LoginViewModel(IAPIHelper apiHelper)
@@ -44,25 +45,51 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
             }
         }
 
+        public bool IsErrorVisible
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(ErrorMessage);
+            }
+
+        }
+
+        public string ErrorMessage
+        {
+            get
+            {
+                return _errorMessage;
+            }
+            set
+            {
+                _errorMessage = value;
+                NotifyOfPropertyChange(() => ErrorMessage);
+                NotifyOfPropertyChange(() => IsErrorVisible);
+            }
+        }
+
         public bool CanLogIn
         {
             get
             {
-                return !String.IsNullOrEmpty(Username) && !String.IsNullOrEmpty(Password);
+                return !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password);
             }
         }
 
         public async Task LogIn()
         {
+            ErrorMessage = "";
+
             try
             {
                 var result = await _apiHelper.Authenticate(Username, Password);
+                ErrorMessage = "Jsi přihlášen";
             }
             catch (Exception ex)
             {
-                var message = ex.Message;
-
+                ErrorMessage = $"Nejsi přihlášen: {ex.Message}";
             }
+
         }
     }
 }
