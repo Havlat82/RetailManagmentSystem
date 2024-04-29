@@ -9,6 +9,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RetailManagmentSystem.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailManagmentSystem.WPF-UI", "RetailManagmentSystem.WPF-UI\RetailManagmentSystem.WPF-UI.csproj", "{930167EB-FFCC-4749-8F4B-784D4D28B657}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailManagmentSystem.DataManagerLibrary", "RetailManagmentSystem.DataManagerLibrary\RetailManagmentSystem.DataManagerLibrary.csproj", "{CD8FB886-D1EE-48BD-958E-BD728D5A1BE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailManagmentSystem.WPF-UI.Library", "RetailManagmentSystem.WPF-UI.Library\RetailManagmentSystem.WPF-UI.Library.csproj", "{C0CABB5D-3C54-46F0-8123-0232C8FBCC42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{930167EB-FFCC-4749-8F4B-784D4D28B657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930167EB-FFCC-4749-8F4B-784D4D28B657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930167EB-FFCC-4749-8F4B-784D4D28B657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD8FB886-D1EE-48BD-958E-BD728D5A1BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8FB886-D1EE-48BD-958E-BD728D5A1BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8FB886-D1EE-48BD-958E-BD728D5A1BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8FB886-D1EE-48BD-958E-BD728D5A1BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CABB5D-3C54-46F0-8123-0232C8FBCC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CABB5D-3C54-46F0-8123-0232C8FBCC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CABB5D-3C54-46F0-8123-0232C8FBCC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CABB5D-3C54-46F0-8123-0232C8FBCC42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

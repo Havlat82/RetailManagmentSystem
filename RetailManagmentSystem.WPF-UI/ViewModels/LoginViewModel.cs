@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using RetailManagmentSystem.WPF_UI.Helpers;
+using RetailManagmentSystem.WPF_UI.Library.Api;
 using System;
 using System.Threading.Tasks;
 
@@ -84,6 +84,8 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
             {
                 var result = await _apiHelper.Authenticate(Username, Password);
                 ErrorMessage = "Jsi přihlášen";
+                await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
             }
             catch (Exception ex)
             {

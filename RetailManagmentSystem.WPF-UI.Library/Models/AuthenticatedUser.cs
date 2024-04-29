@@ -1,4 +1,4 @@
-﻿namespace RetailManagmentSystem.WPF_UI.Models
+﻿namespace RetailManagmentSystem.WPF_UI.Library.Models
 {
     public class AuthenticatedUser
     {
