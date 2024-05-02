@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using RetailManagmentSystem.WPF_UI.EventModels;
 using RetailManagmentSystem.WPF_UI.Library.Api;
 using System;
 using System.Threading.Tasks;
@@ -11,10 +12,12 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
         private string _password;
         private string _errorMessage;
         private IAPIHelper _apiHelper;
+        private IEventAggregator _eventAggregator;
 
-        public LoginViewModel(IAPIHelper apiHelper)
+        public LoginViewModel(IAPIHelper apiHelper, IEventAggregator eventAggregator)
         {
             _apiHelper = apiHelper;
+            _eventAggregator = eventAggregator;
         }
 
         public string Username
@@ -85,6 +88,7 @@ namespace RetailManagmentSystem.WPF_UI.ViewModels
                 var result = await _apiHelper.Authenticate(Username, Password);
                 ErrorMessage = "Jsi přihlášen";
                 await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+                await _eventAggregator.PublishOnUIThreadAsync(new LogOnEvent());
 
             }
             catch (Exception ex)
